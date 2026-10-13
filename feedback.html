@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html data-theme="light" lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <meta content="StudentHub college student portal" name="description"/>
+  <title>
+   Feedback | StudentHub
+  </title>
+  <link href="css/style.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <header class="site-header">
+   <div class="container nav-wrap">
+    <a class="brand" href="index.html">
+     <span class="brand-mark">
+      S
+     </span>
+     StudentHub
+    </a>
+    <button aria-expanded="false" aria-label="Toggle navigation" class="mobile-menu secondary" data-menu-toggle="">
+     ☰ Menu
+    </button>
+    <nav aria-label="Main navigation" class="nav-links" data-nav-links="">
+     <a data-active-nav="" href="index.html">
+      Home
+     </a>
+     <a data-active-nav="" href="about.html">
+      About
+     </a>
+     <a data-active-nav="" href="faq.html">
+      FAQ
+     </a>
+     <a data-active-nav="" href="contact.html">
+      Contact
+     </a>
+     <a data-active-nav="" href="feedback.html">
+      Feedback
+     </a>
+     <a href="login.html">
+      Login
+     </a>
+     <a href="register.html">
+      Register
+     </a>
+     <button aria-label="Switch to dark theme" aria-pressed="false" class="theme-toggle" data-theme-toggle="">
+      🔆
+     </button>
+    </nav>
+   </div>
+  </header>
+  <main>
+   <section class="container">
+    <div class="card form-card">
+     <h1>
+      Share your feedback
+     </h1>
+     <p class="muted">
+      Tell us what is working well and what could improve.
+     </p>
+     <form id="feedback-form">
+      <div class="form-grid">
+       <div class="field">
+        <label for="feedback-name">
+         Name *
+        </label>
+        <input id="feedback-name" required=""/>
+       </div>
+       <div class="field">
+        <label for="feedback-email">
+         Email *
+        </label>
+        <input id="feedback-email" required="" type="email"/>
+       </div>
+       <div class="field">
+        <label for="feedback-category">
+         Category *
+        </label>
+        <select id="feedback-category" required="">
+         <option value="">
+          Choose category
+         </option>
+         <option>
+          Website usability
+         </option>
+         <option>
+          Events
+         </option>
+         <option>
+          Dashboard
+         </option>
+         <option>
+          Accessibility
+         </option>
+         <option>
+          Other
+         </option>
+        </select>
+       </div>
+       <fieldset class="field">
+        <legend>
+         Rating *
+        </legend>
+        <div aria-label="Rate your experience from 1 to 5" class="rating-stars" id="rating-stars" role="group">
+         <button aria-label="1 star" data-rating="1" type="button">
+          &starf;
+         </button>
+         <button aria-label="2 stars" data-rating="2" type="button">
+          &starf;
+         </button>
+         <button aria-label="3 stars" data-rating="3" type="button">
+          &starf;
+         </button>
+         <button aria-label="4 stars" data-rating="4" type="button">
+          &starf;
+         </button>
+         <button aria-label="5 stars" data-rating="5" type="button">
+          &starf;
+         </button>
+        </div>
+        <input id="rating-value" required="" type="hidden"/>
+       </fieldset>
+       <div class="field full">
+        <label for="feedback-comments">
+         Comments *
+        </label>
+        <textarea id="feedback-comments" minlength="8" required=""></textarea>
+       </div>
+      </div>
+      <div aria-live="polite" id="feedback-status">
+      </div>
+      <button type="submit">
+       Submit feedback
+      </button>
+     </form>
+    </div>
+   </section>
+   <script>
+    let rating=0;document.querySelectorAll('[data-rating]').forEach(b=>b.addEventListener('click',()=>{rating=Number(b.dataset.rating);document.querySelector('#rating-value').value=rating;document.querySelectorAll('[data-rating]').forEach(x=>x.classList.toggle('chosen',Number(x.dataset.rating)<=rating));}));document.querySelector('#feedback-form').addEventListener('submit',e=>{e.preventDefault();if(!e.target.reportValidity())return;if(!rating){document.querySelector('#feedback-status').textContent='Please choose a star rating.';document.querySelector('#feedback-status').className='notice error-box';return;}document.querySelector('#feedback-status').textContent=`Thank you for your ${rating}-star feedback. This submission is a local demo only.`;document.querySelector('#feedback-status').className='notice';e.target.reset();rating=0;document.querySelectorAll('[data-rating]').forEach(x=>x.classList.remove('chosen'));});
+   </script>
+  </main>
+  <footer class="footer">
+   <div class="container">
+    &copy; 2026 StudentHub &middot; A student portal demonstration project.
+   </div>
+  </footer>
+  <script src="js/main.js">
+  </script>
+  <script src="js/auth.js">
+  </script>
+ </body>
+</html>

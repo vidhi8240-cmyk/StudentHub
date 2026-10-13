@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html data-theme="light" lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <meta content="StudentHub college student portal" name="description"/>
+  <title>
+   Contact | StudentHub
+  </title>
+  <link href="css/style.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <header class="site-header">
+   <div class="container nav-wrap">
+    <a class="brand" href="index.html">
+     <span class="brand-mark">
+      S
+     </span>
+     StudentHub
+    </a>
+    <button aria-expanded="false" aria-label="Toggle navigation" class="mobile-menu secondary" data-menu-toggle="">
+     ☰ Menu
+    </button>
+    <nav aria-label="Main navigation" class="nav-links" data-nav-links="">
+     <a data-active-nav="" href="index.html">
+      Home
+     </a>
+     <a data-active-nav="" href="about.html">
+      About
+     </a>
+     <a data-active-nav="" href="faq.html">
+      FAQ
+     </a>
+     <a data-active-nav="" href="contact.html">
+      Contact
+     </a>
+     <a data-active-nav="" href="feedback.html">
+      Feedback
+     </a>
+     <a href="login.html">
+      Login
+     </a>
+     <a href="register.html">
+      Register
+     </a>
+     <button aria-label="Switch to dark theme" aria-pressed="false" class="theme-toggle" data-theme-toggle="">
+      🔆
+     </button>
+    </nav>
+   </div>
+  </header>
+  <main>
+   <section class="container">
+    <div class="section-heading" style="margin-top:35px">
+     <div>
+      <h1>
+       Contact StudentHub
+      </h1>
+      <p>
+       Questions or feedback? Send a message to the support team.
+      </p>
+     </div>
+    </div>
+    <div class="grid two">
+     <form class="card" id="contact-form">
+      <div class="field">
+       <label for="contact-name">
+        Name *
+       </label>
+       <input id="contact-name" minlength="2" required=""/>
+      </div>
+      <div class="field" style="margin-top:13px">
+       <label for="contact-email">
+        Email *
+       </label>
+       <input id="contact-email" required="" type="email"/>
+      </div>
+      <div class="field" style="margin-top:13px">
+       <label for="contact-subject">
+        Subject *
+       </label>
+       <input id="contact-subject" required=""/>
+      </div>
+      <div class="field" style="margin-top:13px">
+       <label for="contact-message">
+        Message *
+       </label>
+       <textarea id="contact-message" minlength="10" required=""></textarea>
+      </div>
+      <div aria-live="polite" id="contact-status">
+      </div>
+      <button style="margin-top:15px">
+       Send message
+      </button>
+     </form>
+     <aside class="card">
+      <div class="icon-box">
+       ✉️
+      </div>
+      <h2>
+       Support information
+      </h2>
+      <p>
+       General support
+      </p>
+      <p>
+       <strong>
+        Email:
+       </strong>
+       support@studenthub.demo
+      </p>
+      <p>
+       <strong>
+        Office hours:
+       </strong>
+       Monday&ndash;Friday, 9:00 AM&ndash;5:00 PM
+      </p>
+      <p class="small-note">
+       These contact details are examples for the static project.
+      </p>
+     </aside>
+    </div>
+   </section>
+   <script>
+    document.querySelector('#contact-form').addEventListener('submit',e=>{e.preventDefault();if(!e.target.reportValidity())return;document.querySelector('#contact-status').textContent='Thanks! Your message has been recorded for this demo only.';document.querySelector('#contact-status').className='notice';e.target.reset();});
+   </script>
+  </main>
+  <footer class="footer">
+   <div class="container">
+    &copy; 2026 StudentHub &middot; A student portal demonstration project.
+   </div>
+  </footer>
+  <script src="js/main.js">
+  </script>
+  <script src="js/auth.js">
+  </script>
+ </body>
+</html>

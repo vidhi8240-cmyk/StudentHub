@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html data-theme="light" lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <meta content="StudentHub college student portal" name="description"/>
+  <title>
+   Register | StudentHub
+  </title>
+  <link href="css/style.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <header class="site-header">
+   <div class="container nav-wrap">
+    <a class="brand" href="index.html">
+     <span class="brand-mark">
+      S
+     </span>
+     StudentHub
+    </a>
+    <button aria-expanded="false" aria-label="Toggle navigation" class="mobile-menu secondary" data-menu-toggle="">
+     ☰ Menu
+    </button>
+    <nav aria-label="Main navigation" class="nav-links" data-nav-links="">
+     <a data-active-nav="" href="index.html">
+      Home
+     </a>
+     <a data-active-nav="" href="about.html">
+      About
+     </a>
+     <a data-active-nav="" href="faq.html">
+      FAQ
+     </a>
+     <a data-active-nav="" href="contact.html">
+      Contact
+     </a>
+     <a data-active-nav="" href="feedback.html">
+      Feedback
+     </a>
+     <a href="login.html">
+      Login
+     </a>
+     <a href="register.html">
+      Register
+     </a>
+     <button aria-label="Switch to dark theme" aria-pressed="false" class="theme-toggle" data-theme-toggle="">
+      🔆
+     </button>
+    </nav>
+   </div>
+  </header>
+  <main>
+   <section class="container">
+    <div class="card form-card">
+     <h1>
+      Create your StudentHub account
+     </h1>
+     <p class="muted">
+      Fields marked required must be completed. Indian mobile numbers should contain 10 digits.
+     </p>
+     <form id="register-form">
+      <div class="form-grid">
+       <div class="field">
+        <label for="fullName">
+         Full name *
+        </label>
+        <input autocomplete="name" id="fullName" maxlength="70" minlength="2" name="fullName" pattern="[A-Za-z&Agrave;-&yuml;][A-Za-z&Agrave;-&yuml; '\-]{1,69}" required=""/>
+       </div>
+       <div class="field">
+        <label for="email">
+         Email address *
+        </label>
+        <input autocomplete="email" id="email" name="email" required="" type="email"/>
+       </div>
+       <div class="field">
+        <label for="mobile">
+         Mobile number *
+        </label>
+        <input aria-describedby="mobile-help" id="mobile" inputmode="numeric" maxlength="10" name="mobile" pattern="[6-9][0-9]{9}" required="" type="tel"/>
+        <small id="mobile-help">
+         10 digits, beginning with 6&ndash;9.
+        </small>
+       </div>
+       <div class="field">
+        <label for="course">
+         Course *
+        </label>
+        <select id="course" name="course" required="">
+         <option value="">
+          Choose a course
+         </option>
+         <option>
+          Computer Engineering
+         </option>
+         <option>
+          Information Technology
+         </option>
+         <option>
+          Computer Science
+         </option>
+         <option>
+          Mechanical Engineering
+         </option>
+         <option>
+          Civil Engineering
+         </option>
+         <option>
+          Electrical Engineering
+         </option>
+         <option>
+          Other
+         </option>
+        </select>
+       </div>
+       <div class="field">
+        <label for="year">
+         Academic year *
+        </label>
+        <select id="year" name="year" required="">
+         <option value="">
+          Choose year
+         </option>
+         <option>
+          First Year
+         </option>
+         <option>
+          Second Year
+         </option>
+         <option>
+          Third Year
+         </option>
+         <option>
+          Fourth Year
+         </option>
+        </select>
+       </div>
+       <div class="field">
+        <label for="password">
+         Password *
+        </label>
+        <div style="display:flex;gap:8px">
+         <input autocomplete="new-password" id="password" minlength="8" name="password" required="" style="flex:1" type="password"/>
+         <button class="secondary" data-password-toggle="password" type="button">
+          Show
+         </button>
+        </div>
+        <small>
+         8+ characters with uppercase, lowercase, number and special character.
+        </small>
+       </div>
+       <div class="field">
+        <label for="confirmPassword">
+         Confirm password *
+        </label>
+        <input autocomplete="new-password" id="confirmPassword" name="confirmPassword" required="" type="password"/>
+       </div>
+       <fieldset class="field full">
+        <legend>
+         Gender (optional)
+        </legend>
+        <div class="inline-options">
+         <label>
+          <input name="gender" type="radio" value="Female"/>
+          Female
+         </label>
+         <label>
+          <input name="gender" type="radio" value="Male"/>
+          Male
+         </label>
+         <label>
+          <input name="gender" type="radio" value="Prefer not to say"/>
+          Prefer not to say
+         </label>
+        </div>
+       </fieldset>
+       <div class="field full">
+        <label class="check-row">
+         <input name="terms" required="" type="checkbox"/>
+         <span>
+          I agree to the demonstration terms and conditions. *
+         </span>
+        </label>
+       </div>
+      </div>
+      <div aria-live="polite" id="register-message">
+      </div>
+      <div class="hero-actions">
+       <button type="submit">
+        Register
+       </button>
+       <button class="secondary" type="reset">
+        Reset
+       </button>
+      </div>
+     </form>
+     <p class="small-note">
+      Prototype notice: do not use real passwords or sensitive personal information here.
+     </p>
+    </div>
+   </section>
+  </main>
+  <footer class="footer">
+   <div class="container">
+    &copy; 2026 StudentHub &middot; A student portal demonstration project.
+   </div>
+  </footer>
+  <script src="js/main.js">
+  </script>
+  <script src="js/auth.js">
+  </script>
+ </body>
+</html>

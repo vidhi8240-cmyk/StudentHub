@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html data-theme="light" lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <meta content="StudentHub college student portal" name="description"/>
+  <title>
+   Campus Events | StudentHub
+  </title>
+  <link href="css/style.css" rel="stylesheet"/>
+  <script src="js/route-guard.js">
+  </script>
+ </head>
+ <body>
+  <header class="site-header">
+   <div class="container nav-wrap">
+    <a class="brand" href="index.html">
+     <span class="brand-mark">
+      S
+     </span>
+     StudentHub
+    </a>
+    <button aria-expanded="false" aria-label="Toggle navigation" class="mobile-menu secondary" data-menu-toggle="">
+     ☰ Menu
+    </button>
+    <nav aria-label="Main navigation" class="nav-links" data-nav-links="">
+     <a data-active-nav="" href="index.html">
+      Home
+     </a>
+     <a data-active-nav="" href="about.html">
+      About
+     </a>
+     <a data-active-nav="" href="faq.html">
+      FAQ
+     </a>
+     <a data-active-nav="" href="contact.html">
+      Contact
+     </a>
+     <a data-active-nav="" href="feedback.html">
+      Feedback
+     </a>
+     <a href="login.html">
+      Login
+     </a>
+     <a href="register.html">
+      Register
+     </a>
+     <button aria-label="Switch to dark theme" aria-pressed="false" class="theme-toggle" data-theme-toggle="">
+      🔆
+     </button>
+    </nav>
+   </div>
+  </header>
+  <main>
+   <section class="hero">
+    <div class="container">
+     <p>
+      CAMPUS LIFE, ALL IN ONE PLACE
+     </p>
+     <h1>
+      Explore Campus Events
+     </h1>
+     <p>
+      Discover workshops, seminars, competitions, cultural festivals, and activities happening across our campus.
+     </p>
+     <form class="search-hero" onsubmit="event.preventDefault();document.querySelector('#events-section').scrollIntoView({behavior:'smooth'})">
+      <input aria-label="Search events" id="event-search" placeholder="Search title, department, institute, category or venue" type="search"/>
+      <button class="secondary" type="submit">
+       Explore events &darr;
+      </button>
+     </form>
+     <div class="stats">
+      <div class="stat">
+       <span>
+        Total events
+       </span>
+       <strong id="total-stat">
+        12
+       </strong>
+      </div>
+      <div class="stat">
+       <span>
+        Ongoing events
+       </span>
+       <strong id="ongoing-stat">
+        0
+       </strong>
+      </div>
+      <div class="stat">
+       <span>
+        Upcoming events
+       </span>
+       <strong id="upcoming-stat">
+        0
+       </strong>
+      </div>
+      <div class="stat">
+       <span>
+        Departments represented
+       </span>
+       <strong id="departments-stat">
+        10
+       </strong>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="section">
+    <div class="container">
+     <div class="section-heading">
+      <div>
+       <h2>
+        Happening Now on Campus
+       </h2>
+       <p>
+        Current activities are calculated from event dates and times.
+       </p>
+      </div>
+     </div>
+     <div class="grid" id="happening-now">
+      <div class="empty-state">
+       Checking event schedule&hellip;
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="section" id="events-section">
+    <div class="container">
+     <div class="section-heading">
+      <div>
+       <h2>
+        Find your next event
+       </h2>
+       <p>
+        Use any combination of filters. Event data is illustrative.
+       </p>
+      </div>
+      <button class="secondary" id="clear-filters">
+       Clear all filters
+      </button>
+     </div>
+     <div class="filters">
+      <div class="filter-control">
+       <label for="department-filter">
+        Department
+       </label>
+       <select id="department-filter">
+        <option value="">
+         All departments
+        </option>
+       </select>
+      </div>
+      <div class="filter-control">
+       <label for="institute-filter">
+        Institute
+       </label>
+       <select id="institute-filter">
+        <option value="">
+         All institutes
+        </option>
+       </select>
+      </div>
+      <div class="filter-control">
+       <label for="category-filter">
+        Category
+       </label>
+       <select id="category-filter">
+        <option value="">
+         All categories
+        </option>
+       </select>
+      </div>
+      <div class="filter-control">
+       <label for="format-filter">
+        Format
+       </label>
+       <select id="format-filter">
+        <option value="">
+         Any format
+        </option>
+       </select>
+      </div>
+      <div class="filter-control">
+       <label for="date-filter">
+        Start date
+       </label>
+       <input id="date-filter" type="date"/>
+      </div>
+      <div class="filter-control">
+       <label for="sort-filter">
+        Sort by
+       </label>
+       <select id="sort-filter">
+        <option value="soonest">
+         Soonest event
+        </option>
+        <option value="latest">
+         Latest added
+        </option>
+        <option value="alpha">
+         Alphabetical
+        </option>
+        <option value="popular">
+         Most popular
+        </option>
+       </select>
+      </div>
+     </div>
+     <div aria-label="Filter events by status" class="tabs" role="group">
+      <button class="active" data-status-tab="All Events">
+       All Events
+      </button>
+      <button data-status-tab="Ongoing">
+       Ongoing
+      </button>
+      <button data-status-tab="Upcoming">
+       Upcoming
+      </button>
+      <button data-status-tab="Completed">
+       Completed
+      </button>
+      <button data-status-tab="My Events">
+       My Events
+      </button>
+     </div>
+     <p aria-live="polite" class="muted" id="result-count">
+      Loading events&hellip;
+     </p>
+     <div class="grid" id="events-list">
+      <div class="empty-state">
+       Loading events&hellip;
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="section">
+    <div class="container">
+     <div class="section-heading">
+      <div>
+       <h2>
+        Explore by Department
+       </h2>
+       <p>
+        Select a department to filter the event list.
+       </p>
+      </div>
+     </div>
+     <div class="grid" id="department-explorer">
+     </div>
+    </div>
+   </section>
+   <section class="section">
+    <div class="container">
+     <div class="section-heading">
+      <div>
+       <h2>
+        Explore by Institute
+       </h2>
+       <p>
+        Browse activities across institutes and campus organizations.
+       </p>
+      </div>
+     </div>
+     <div class="grid" id="institute-explorer">
+     </div>
+    </div>
+   </section>
+   <div aria-hidden="true" class="modal-backdrop hidden" id="event-modal">
+    <section aria-labelledby="event-modal-title" aria-modal="true" class="modal" id="modal-content" role="dialog">
+    </section>
+   </div>
+   <section class="section">
+    <div class="container">
+     <p class="small-note">
+      Important: event dates, departments, institutes, participant counts and contact details are sample content. LocalStorage registration is only a browser demo; the server must enforce real capacity, deadlines and permissions.
+     </p>
+    </div>
+   </section>
+  </main>
+  <footer class="footer">
+   <div class="container">
+    &copy; 2026 StudentHub &middot; A student portal demonstration project.
+   </div>
+  </footer>
+  <script src="js/main.js">
+  </script>
+  <script src="js/auth.js">
+  </script>
+  <script src="js/events.js">
+  </script>
+ </body>
+</html>

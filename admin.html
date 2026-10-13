@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html data-theme="light" lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <meta content="StudentHub college student portal" name="description"/>
+  <title>
+   Admin | StudentHub
+  </title>
+  <link href="css/style.css" rel="stylesheet"/>
+  <script src="js/route-guard.js">
+  </script>
+ </head>
+ <body>
+  <header class="site-header">
+   <div class="container nav-wrap">
+    <a class="brand" href="index.html">
+     <span class="brand-mark">
+      S
+     </span>
+     StudentHub
+    </a>
+    <button aria-expanded="false" aria-label="Toggle navigation" class="mobile-menu secondary" data-menu-toggle="">
+     ☰ Menu
+    </button>
+    <nav aria-label="Main navigation" class="nav-links" data-nav-links="">
+     <a data-active-nav="" href="index.html">
+      Home
+     </a>
+     <a data-active-nav="" href="about.html">
+      About
+     </a>
+     <a data-active-nav="" href="faq.html">
+      FAQ
+     </a>
+     <a data-active-nav="" href="contact.html">
+      Contact
+     </a>
+     <a data-active-nav="" href="feedback.html">
+      Feedback
+     </a>
+     <a href="login.html">
+      Login
+     </a>
+     <a href="register.html">
+      Register
+     </a>
+     <button aria-label="Switch to dark theme" aria-pressed="false" class="theme-toggle" data-theme-toggle="">
+      🔆
+     </button>
+    </nav>
+   </div>
+  </header>
+  <main>
+   <section class="section">
+    <div class="container">
+     <div class="dashboard-welcome">
+      <p>
+       ADMINISTRATION
+      </p>
+      <h1>
+       Student &amp; Event Management
+      </h1>
+      <p>
+       Demonstration controls for reviewing student data and campus events.
+      </p>
+     </div>
+     <div class="stats">
+      <div class="stat">
+       <span>
+        Sample students
+       </span>
+       <strong id="student-count">
+        3
+       </strong>
+      </div>
+      <div class="stat">
+       <span>
+        Events in sample data
+       </span>
+       <strong>
+        12
+       </strong>
+      </div>
+      <div class="stat">
+       <span>
+        Departments
+       </span>
+       <strong>
+        10+
+       </strong>
+      </div>
+      <div class="stat">
+       <span>
+        Mode
+       </span>
+       <strong>
+        Demo
+       </strong>
+      </div>
+     </div>
+     <section class="section">
+      <div class="section-heading">
+       <div>
+        <h2>
+         Student management
+        </h2>
+        <p>
+         Search and manage sample rows in this page only.
+        </p>
+       </div>
+       <button id="add-student">
+        Add student
+       </button>
+      </div>
+      <div class="filter-control" style="margin-bottom:15px">
+       <label for="student-search">
+        Search students
+       </label>
+       <input id="student-search" placeholder="Search by name, email or course" type="search"/>
+      </div>
+      <div class="card table-wrap">
+       <table class="data-table">
+        <thead>
+         <tr>
+          <th>
+           Name
+          </th>
+          <th>
+           Email
+          </th>
+          <th>
+           Course
+          </th>
+          <th>
+           Year
+          </th>
+          <th>
+           Actions
+          </th>
+         </tr>
+        </thead>
+        <tbody id="student-rows">
+        </tbody>
+       </table>
+      </div>
+     </section>
+     <section class="section">
+      <div class="section-heading">
+       <div>
+        <h2>
+         Event management
+        </h2>
+        <p>
+         Create a demonstration event; it will appear in the events list in this browser.
+        </p>
+       </div>
+      </div>
+      <form class="card form-grid" id="admin-event-form">
+       <div class="field">
+        <label for="admin-event-title">
+         Event title *
+        </label>
+        <input id="admin-event-title" required=""/>
+       </div>
+       <div class="field">
+        <label for="admin-event-dept">
+         Department *
+        </label>
+        <input id="admin-event-dept" required="" value="Computer Engineering"/>
+       </div>
+       <div class="field">
+        <label for="admin-event-institute">
+         Institute *
+        </label>
+        <input id="admin-event-institute" required="" value="Institute of Engineering and Technology"/>
+       </div>
+       <div class="field">
+        <label for="admin-event-category">
+         Category *
+        </label>
+        <select id="admin-event-category">
+         <option>
+          Workshop
+         </option>
+         <option>
+          Competition
+         </option>
+         <option>
+          Seminar
+         </option>
+         <option>
+          Cultural
+         </option>
+         <option>
+          Exhibition
+         </option>
+        </select>
+       </div>
+       <div class="field">
+        <label for="admin-event-start">
+         Start date *
+        </label>
+        <input id="admin-event-start" required="" type="date"/>
+       </div>
+       <div class="field">
+        <label for="admin-event-starttime">
+         Start time *
+        </label>
+        <input id="admin-event-starttime" required="" type="time" value="10:00"/>
+       </div>
+       <div class="field">
+        <label for="admin-event-end">
+         End date *
+        </label>
+        <input id="admin-event-end" required="" type="date"/>
+       </div>
+       <div class="field">
+        <label for="admin-event-endtime">
+         End time *
+        </label>
+        <input id="admin-event-endtime" required="" type="time" value="16:00"/>
+       </div>
+       <div class="field">
+        <label for="admin-event-deadline">
+         Registration deadline *
+        </label>
+        <input id="admin-event-deadline" required="" type="date"/>
+       </div>
+       <div class="field">
+        <label for="admin-event-venue">
+         Venue *
+        </label>
+        <input id="admin-event-venue" required=""/>
+       </div>
+       <div class="field">
+        <label for="admin-event-format">
+         Format
+        </label>
+        <select id="admin-event-format">
+         <option>
+          Offline
+         </option>
+         <option>
+          Online
+         </option>
+        </select>
+       </div>
+       <div class="field">
+        <label for="admin-event-capacity">
+         Participant limit
+        </label>
+        <input id="admin-event-capacity" min="1" required="" type="number" value="100"/>
+       </div>
+       <div class="field full">
+        <label for="admin-event-description">
+         Description *
+        </label>
+        <textarea id="admin-event-description" required=""></textarea>
+       </div>
+       <div class="field full">
+        <button type="submit">
+         Publish demo event
+        </button>
+        <div aria-live="polite" id="admin-event-message">
+        </div>
+       </div>
+      </form>
+     </section>
+     <p class="small-note">
+      Front-end role checks are only a demonstration. Do not expose real student data; secure authorization and persistence require a backend.
+     </p>
+    </div>
+   </section>
+   <script src="js/admin.js">
+   </script>
+  </main>
+  <footer class="footer">
+   <div class="container">
+    &copy; 2026 StudentHub &middot; A student portal demonstration project.
+   </div>
+  </footer>
+  <script src="js/main.js">
+  </script>
+  <script src="js/auth.js">
+  </script>
+ </body>
+</html>

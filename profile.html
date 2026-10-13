@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html data-theme="light" lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <meta content="StudentHub college student portal" name="description"/>
+  <title>
+   Profile | StudentHub
+  </title>
+  <link href="css/style.css" rel="stylesheet"/>
+  <script src="js/route-guard.js">
+  </script>
+ </head>
+ <body>
+  <header class="site-header">
+   <div class="container nav-wrap">
+    <a class="brand" href="index.html">
+     <span class="brand-mark">
+      S
+     </span>
+     StudentHub
+    </a>
+    <button aria-expanded="false" aria-label="Toggle navigation" class="mobile-menu secondary" data-menu-toggle="">
+     ☰ Menu
+    </button>
+    <nav aria-label="Main navigation" class="nav-links" data-nav-links="">
+     <a data-active-nav="" href="index.html">
+      Home
+     </a>
+     <a data-active-nav="" href="about.html">
+      About
+     </a>
+     <a data-active-nav="" href="faq.html">
+      FAQ
+     </a>
+     <a data-active-nav="" href="contact.html">
+      Contact
+     </a>
+     <a data-active-nav="" href="feedback.html">
+      Feedback
+     </a>
+     <a href="login.html">
+      Login
+     </a>
+     <a href="register.html">
+      Register
+     </a>
+     <button aria-label="Switch to dark theme" aria-pressed="false" class="theme-toggle" data-theme-toggle="">
+      🔆
+     </button>
+    </nav>
+   </div>
+  </header>
+  <main>
+   <section class="container">
+    <div class="card form-card">
+     <div class="profile-row">
+      <div aria-hidden="true" class="avatar">
+       SH
+      </div>
+      <div>
+       <h1>
+        My profile
+       </h1>
+       <p class="muted">
+        Edit your demonstration profile details.
+       </p>
+      </div>
+     </div>
+     <form class="form-grid" id="profile-form" style="margin-top:22px">
+      <div class="field">
+       <label for="profile-name">
+        Full name
+       </label>
+       <input id="profile-name" required="" value="Demo Student"/>
+      </div>
+      <div class="field">
+       <label for="profile-email">
+        Email address
+       </label>
+       <input id="profile-email" required="" type="email" value="student@demo.com"/>
+      </div>
+      <div class="field">
+       <label for="profile-mobile">
+        Mobile number
+       </label>
+       <input id="profile-mobile" maxlength="10" pattern="[6-9][0-9]{9}" value="9876543210"/>
+      </div>
+      <div class="field">
+       <label for="profile-course">
+        Course
+       </label>
+       <select id="profile-course">
+        <option>
+         Computer Engineering
+        </option>
+        <option>
+         Information Technology
+        </option>
+        <option>
+         Computer Science
+        </option>
+        <option>
+         Mechanical Engineering
+        </option>
+        <option>
+         Civil Engineering
+        </option>
+        <option>
+         Electrical Engineering
+        </option>
+       </select>
+      </div>
+      <div class="field">
+       <label for="profile-year">
+        Academic year
+       </label>
+       <select id="profile-year">
+        <option>
+         First Year
+        </option>
+        <option>
+         Second Year
+        </option>
+        <option>
+         Third Year
+        </option>
+        <option>
+         Fourth Year
+        </option>
+       </select>
+      </div>
+      <div class="field full">
+       <div aria-live="polite" id="profile-message">
+       </div>
+       <div class="hero-actions">
+        <button type="submit">
+         Save profile
+        </button>
+        <button class="secondary" type="reset">
+         Cancel changes
+        </button>
+       </div>
+      </div>
+     </form>
+    </div>
+   </section>
+   <script src="js/profile.js">
+   </script>
+  </main>
+  <footer class="footer">
+   <div class="container">
+    &copy; 2026 StudentHub &middot; A student portal demonstration project.
+   </div>
+  </footer>
+  <script src="js/main.js">
+  </script>
+  <script src="js/auth.js">
+  </script>
+ </body>
+</html>

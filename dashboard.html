@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html data-theme="light" lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <meta content="StudentHub college student portal" name="description"/>
+  <title>
+   Dashboard | StudentHub
+  </title>
+  <link href="css/style.css" rel="stylesheet"/>
+  <script src="js/route-guard.js">
+  </script>
+ </head>
+ <body>
+  <header class="site-header">
+   <div class="container nav-wrap">
+    <a class="brand" href="index.html">
+     <span class="brand-mark">
+      S
+     </span>
+     StudentHub
+    </a>
+    <button aria-expanded="false" aria-label="Toggle navigation" class="mobile-menu secondary" data-menu-toggle="">
+     ☰ Menu
+    </button>
+    <nav aria-label="Main navigation" class="nav-links" data-nav-links="">
+     <a data-active-nav="" href="index.html">
+      Home
+     </a>
+     <a data-active-nav="" href="about.html">
+      About
+     </a>
+     <a data-active-nav="" href="faq.html">
+      FAQ
+     </a>
+     <a data-active-nav="" href="contact.html">
+      Contact
+     </a>
+     <a data-active-nav="" href="feedback.html">
+      Feedback
+     </a>
+     <a href="login.html">
+      Login
+     </a>
+     <a href="register.html">
+      Register
+     </a>
+     <button aria-label="Switch to dark theme" aria-pressed="false" class="theme-toggle" data-theme-toggle="">
+      🔆
+     </button>
+    </nav>
+   </div>
+  </header>
+  <main>
+   <section class="section">
+    <div class="container">
+     <div class="dashboard-welcome">
+      <p>
+       STUDENT OVERVIEW
+      </p>
+      <h1 data-dashboard-welcome="">
+       Hello, Student!
+      </h1>
+      <p>
+       Track your academic progress and stay connected with campus life.
+      </p>
+      <div class="hero-actions">
+       <a class="btn secondary" href="events.html">
+        Explore events
+       </a>
+       <a class="btn" href="profile.html">
+        Update profile
+       </a>
+      </div>
+     </div>
+     <div class="stats">
+      <div class="stat">
+       <span>
+        📚 Enrolled courses
+       </span>
+       <strong>
+        6
+       </strong>
+       <span>
+        Across this semester
+       </span>
+      </div>
+      <div class="stat">
+       <span>
+        ✅ Attendance
+       </span>
+       <strong>
+        92%
+       </strong>
+       <span>
+        Sample academic data
+       </span>
+      </div>
+      <div class="stat">
+       <span>
+        🎟️ Upcoming events
+       </span>
+       <strong id="dash-event-count">
+        4
+       </strong>
+       <span>
+        Check the events portal
+       </span>
+      </div>
+      <div class="stat">
+       <span>
+        📝 Pending assignments
+       </span>
+       <strong>
+        3
+       </strong>
+       <span>
+        Sample academic data
+       </span>
+      </div>
+     </div>
+     <div class="section-heading" style="margin-top:35px">
+      <div>
+       <h2>
+        Your overview
+       </h2>
+       <p>
+        Visualizations are illustrative sample data.
+       </p>
+      </div>
+     </div>
+     <div class="dashboard-layout">
+      <article class="card">
+       <h3>
+        Attendance by month
+       </h3>
+       <div aria-label="Attendance chart: Jan 82%, Feb 90%, Mar 88%, Apr 94%, May 92%" class="simple-chart">
+        <div class="bar" style="height:62%">
+         <span>
+          Jan
+         </span>
+        </div>
+        <div class="bar" style="height:80%">
+         <span>
+          Feb
+         </span>
+        </div>
+        <div class="bar" style="height:74%">
+         <span>
+          Mar
+         </span>
+        </div>
+        <div class="bar" style="height:90%">
+         <span>
+          Apr
+         </span>
+        </div>
+        <div class="bar" style="height:85%">
+         <span>
+          May
+         </span>
+        </div>
+       </div>
+       <p class="small-note">
+        Attendance percentage sample: 92%
+       </p>
+      </article>
+      <article class="card">
+       <h3>
+        Academic performance
+       </h3>
+       <div aria-label="Academic scores: Data Structures 78%, Networks 85%, Web 92%, Java 82%, Maths 88%" class="simple-chart">
+        <div class="bar" style="height:70%">
+         <span>
+          DS
+         </span>
+        </div>
+        <div class="bar" style="height:80%">
+         <span>
+          CN
+         </span>
+        </div>
+        <div class="bar" style="height:92%">
+         <span>
+          Web
+         </span>
+        </div>
+        <div class="bar" style="height:77%">
+         <span>
+          Java
+         </span>
+        </div>
+        <div class="bar" style="height:85%">
+         <span>
+          Math
+         </span>
+        </div>
+       </div>
+       <p class="small-note">
+        Sample marks, not official academic records.
+       </p>
+      </article>
+      <article class="card">
+       <h3>
+        Recent activity
+       </h3>
+       <p>
+        &checkmark; Profile details reviewed
+       </p>
+       <p>
+        &checkmark; New events added to the campus portal
+       </p>
+       <p>
+        &checkmark; Feedback form is available
+       </p>
+      </article>
+      <article class="card">
+       <h3>
+        Announcements
+       </h3>
+       <p>
+        Campus event schedules are demonstration content. Confirm dates with your college before attending.
+       </p>
+       <a href="events.html">
+        See campus announcements &rarr;
+       </a>
+      </article>
+     </div>
+    </div>
+   </section>
+  </main>
+  <footer class="footer">
+   <div class="container">
+    &copy; 2026 StudentHub &middot; A student portal demonstration project.
+   </div>
+  </footer>
+  <script src="js/main.js">
+  </script>
+  <script src="js/auth.js">
+  </script>
+  <script src="js/dashboard.js">
+  </script>
+ </body>
+</html>

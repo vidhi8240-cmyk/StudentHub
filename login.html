@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html data-theme="light" lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <meta content="StudentHub college student portal" name="description"/>
+  <title>
+   Login | StudentHub
+  </title>
+  <link href="css/style.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <header class="site-header">
+   <div class="container nav-wrap">
+    <a class="brand" href="index.html">
+     <span class="brand-mark">
+      S
+     </span>
+     StudentHub
+    </a>
+    <button aria-expanded="false" aria-label="Toggle navigation" class="mobile-menu secondary" data-menu-toggle="">
+     ☰ Menu
+    </button>
+    <nav aria-label="Main navigation" class="nav-links" data-nav-links="">
+     <a data-active-nav="" href="index.html">
+      Home
+     </a>
+     <a data-active-nav="" href="about.html">
+      About
+     </a>
+     <a data-active-nav="" href="faq.html">
+      FAQ
+     </a>
+     <a data-active-nav="" href="contact.html">
+      Contact
+     </a>
+     <a data-active-nav="" href="feedback.html">
+      Feedback
+     </a>
+     <a href="login.html">
+      Login
+     </a>
+     <a href="register.html">
+      Register
+     </a>
+     <button aria-label="Switch to dark theme" aria-pressed="false" class="theme-toggle" data-theme-toggle="">
+      🔆
+     </button>
+    </nav>
+   </div>
+  </header>
+  <main>
+   <section class="container">
+    <div class="card form-card" style="max-width:520px">
+     <div class="brand">
+      <span class="brand-mark">
+       S
+      </span>
+      StudentHub
+     </div>
+     <h1>
+      Welcome back
+     </h1>
+     <p class="muted">
+      Sign in to your student or admin demo account.
+     </p>
+     <form id="login-form">
+      <div class="field">
+       <label for="identity">
+        Email or username
+       </label>
+       <input autocomplete="username" id="identity" name="identity" required=""/>
+      </div>
+      <div class="field" style="margin-top:15px">
+       <label for="login-password">
+        Password
+       </label>
+       <div style="display:flex;gap:8px">
+        <input autocomplete="current-password" id="login-password" name="password" required="" style="flex:1" type="password"/>
+        <button class="secondary" data-password-toggle="login-password" type="button">
+         Show
+        </button>
+       </div>
+      </div>
+      <fieldset class="field" style="margin-top:16px">
+       <legend>
+        Sign in as
+       </legend>
+       <div class="inline-options">
+        <label>
+         <input checked="" name="role" type="radio" value="student"/>
+         Student
+        </label>
+        <label>
+         <input name="role" type="radio" value="admin"/>
+         Admin
+        </label>
+       </div>
+      </fieldset>
+      <label class="check-row" style="margin:14px 0">
+       <input name="remember" type="checkbox"/>
+       <span>
+        Remember me on this browser
+       </span>
+      </label>
+      <p>
+       <a href="#" onclick="alert('For this demo, use the sample credentials in README.md.');return false">
+        Forgot password?
+       </a>
+      </p>
+      <div aria-live="polite" id="login-message">
+      </div>
+      <button style="width:100%" type="submit">
+       Login
+      </button>
+     </form>
+     <p>
+      New here?
+      <a href="register.html">
+       Create an account
+      </a>
+     </p>
+     <div class="callout">
+      <strong>
+       Demo accounts
+      </strong>
+      <br/>
+      <span class="small-note">
+       Student: student@demo.com &middot; Student123!
+       <br/>
+       Admin: admin@demo.com &middot; Admin123!
+      </span>
+     </div>
+    </div>
+   </section>
+  </main>
+  <footer class="footer">
+   <div class="container">
+    &copy; 2026 StudentHub &middot; A student portal demonstration project.
+   </div>
+  </footer>
+  <script src="js/main.js">
+  </script>
+  <script src="js/auth.js">
+  </script>
+ </body>
+</html>
